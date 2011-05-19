@@ -37,7 +37,8 @@ class Show(models.Model):
     # In-progress, maybe, but not done.
     # N or null?
     #watch_state = models.CharField(max_length=1, default="N", choices=WATCH_STATE_CHOICES)
-    watch_state = models.CharField(max_length=1, null=True, choices=WATCH_STATE_CHOICES)
+    watch_state = models.CharField(max_length=1, null=True, blank=True,
+        choices=WATCH_STATE_CHOICES)
     
     #done = BooleanField(default=False)
     
