@@ -13,6 +13,9 @@ TYPE_CHOICES = (
     ("S", "Series"),
 )
 
+PRODUCTION_TYPES = ("live action", "animated", "anime")
+PRODUCTION_TYPE_CHOICES = zip(PRODUCTION_TYPES, PRODUCTION_TYPES)
+
 class Show(models.Model):
     title = models.CharField(max_length=100, unique=True)
     # See also 'year' on AniDB (start date & end date)
@@ -27,6 +30,9 @@ class Show(models.Model):
     type = models.CharField(max_length=1, null=False, choices=TYPE_CHOICES)
     
     # Anime, animated, live-action
+    production_type = models.CharField(max_length=12, null=False,
+        default=PRODUCTION_TYPES[0],
+        choices=PRODUCTION_TYPE_CHOICES)
     
     # Group (Foreign key? Should be able to provide link.)
     encoding_group = models.CharField(max_length=20, blank=True)
