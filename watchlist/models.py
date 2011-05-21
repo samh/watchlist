@@ -14,7 +14,12 @@ TYPE_CHOICES = (
 )
 
 PRODUCTION_TYPES = ("live action", "animated", "anime")
-PRODUCTION_TYPE_CHOICES = zip(PRODUCTION_TYPES, PRODUCTION_TYPES)
+#PRODUCTION_TYPE_CHOICES = zip(PRODUCTION_TYPES, PRODUCTION_TYPES)
+PRODUCTION_TYPE_CHOICES = (
+    ("live action", "Live-action"),
+    ("animated", "Animated"),
+    ("anime", "Anime"),
+)
 
 class Show(models.Model):
     title = models.CharField(max_length=100, unique=True)
@@ -63,10 +68,6 @@ class Show(models.Model):
     #        MaxValueValidator(max_value=10), MinValueValidator(min_value=1)])
     note = models.TextField(blank=True)
     
-    # Rewatch date(s)?
-    # Complete history of progress changes?
-    
-    # Lists (many-to-many with list class?)
     
     def __unicode__(self):
         return self.title
