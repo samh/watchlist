@@ -14,7 +14,6 @@ TYPE_CHOICES = (
 )
 
 PRODUCTION_TYPES = ("live action", "animated", "anime")
-#PRODUCTION_TYPE_CHOICES = zip(PRODUCTION_TYPES, PRODUCTION_TYPES)
 PRODUCTION_TYPE_CHOICES = (
     ("live action", "Live-action"),
     ("animated", "Animated"),
@@ -32,7 +31,7 @@ class Show(models.Model):
     # With through model for relationship type (sequel, side story, ...).
     
     # Movie vs Series / OVA
-    type = models.CharField(max_length=1, null=False, choices=TYPE_CHOICES)
+    type = models.CharField(max_length=1, choices=TYPE_CHOICES)
     
     # Anime, animated, live-action
     production_type = models.CharField(max_length=12, null=False,
@@ -48,7 +47,7 @@ class Show(models.Model):
     # In-progress, maybe, but not done.
     # N or null?
     #watch_state = models.CharField(max_length=1, default="N", choices=WATCH_STATE_CHOICES)
-    watch_state = models.CharField(max_length=1, null=True, blank=True,
+    watch_state = models.CharField(max_length=1, blank=True,
         choices=WATCH_STATE_CHOICES)
     
     #done = BooleanField(default=False)
