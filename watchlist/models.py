@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 
 WATCH_STATE_CHOICES = (
@@ -67,9 +68,15 @@ class Show(models.Model):
     #        MaxValueValidator(max_value=10), MinValueValidator(min_value=1)])
     note = models.TextField(blank=True)
     
+    timestamp_created = models.DateTimeField("added", auto_now_add=True,
+        default=datetime.datetime.now())
+    timestamp_modified = models.DateTimeField("last modified", auto_now=True,
+        default=datetime.datetime.now())
+    
     
     def __unicode__(self):
         return self.title
     
     class Meta:
-        ordering = ["title"]
+        #ordering = ["title"]
+        ordering = ["-timestamp_modified"]

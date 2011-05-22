@@ -2,7 +2,7 @@ from watchlist.models import Show
 from django.contrib import admin
 
 class ShowAdmin(admin.ModelAdmin):
-    list_display = ('title', 'type', 'watch_state', 'progress')
+    list_display = ('title', 'type', 'watch_state', 'progress', 'timestamp_modified')
     list_editable = ('watch_state', 'progress')
     list_filter = ('type', 'watch_state', 'production_type')
     
