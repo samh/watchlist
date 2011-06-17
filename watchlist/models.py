@@ -32,7 +32,7 @@ class Show(models.Model):
     # With through model for relationship type (sequel, side story, ...).
     
     # Movie vs Series / OVA
-    type = models.CharField(max_length=1, choices=TYPE_CHOICES)
+    type = models.CharField(max_length=1, choices=TYPE_CHOICES, default='S')
     
     # Anime, animated, live-action
     production_type = models.CharField(max_length=12, null=False,
