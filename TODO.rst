@@ -1,4 +1,8 @@
-* "Last modified" date - default sort (for quick access)?
+* Quick way to increment progress
+
+* Maybe Title shouldn't be unique, or should be unique together with Type and/or Production type
+
+* Disable or hide progress for movies?
 * Lists (many-to-many with list class?)
 * Rewatch date(s)?
 * Complete history of progress changes?
