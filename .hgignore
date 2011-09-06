@@ -5,3 +5,4 @@ syntax: glob
 *.db
 .pydevproject
 .project
+.idea/
