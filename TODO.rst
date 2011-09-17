@@ -1,4 +1,8 @@
-* Quick way to increment progress
+* Improve look of progress widget
+
+  - Decrease width of text field
+  - Add some padding to the images
+  - Prevent line break ("white-space: nowrap" on surrounding element)
 
 * Maybe Title shouldn't be unique, or should be unique together with Type and/or Production type
 
