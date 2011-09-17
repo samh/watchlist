@@ -8,4 +8,7 @@ class ProgressWidget(forms.TextInput):
         super(ProgressWidget, self).__init__(attrs)
         
     class Media:
+        css = {
+            'all': ('css/progress_widget.css',)
+        }
         js = ('js/jquery-1.6.4.min.js', 'js/progress_widget.js',)

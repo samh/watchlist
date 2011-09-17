@@ -1,0 +1,18 @@
+input.progress {
+    width: 5em;
+}
+
+.progress-button {
+    padding-left: .5em;
+}
+
+/* Keep both buttons on the same line */
+/*.progress-buttons {*/
+    /*display: inline-block;*/
+    /*white-space: nowrap;*/
+    /*padding-top: .5em;*/
+/*}*/
+
+td.progress {
+    white-space: nowrap;
+}
