@@ -3,3 +3,12 @@
 {% block extrahead %}<script language="javascript">var STATIC_URL = "{{ STATIC_URL }}";</script>
 {{ block.super }}
 {% endblock %}
+
+{% comment %}
+Show "Save" button at the top of the list (as well as the normal position
+at the bottom)
+{% endcomment %}
+{% load adminmedia admin_list i18n %}
+{% block result_list %}{% pagination cl %}
+{{ block.super }}
+{% endblock %}
