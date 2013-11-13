@@ -1,3 +1,5 @@
+* Turn on USE_TZ (and migrate data)
+
 * Ability to save filters (e.g. Anime, watching)
 
 * To Get/To Watch like AniDB? (maybe best just use AniDB instead, or list on wiki)

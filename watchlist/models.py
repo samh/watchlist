@@ -21,6 +21,7 @@ PRODUCTION_TYPE_CHOICES = (
     ("anime", "Anime"),
 )
 
+
 class Show(models.Model):
     title = models.CharField(max_length=100, unique=True)
     # See also 'year' on AniDB (start date & end date)
