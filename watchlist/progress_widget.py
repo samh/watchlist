@@ -1,5 +1,6 @@
 from django.forms import forms
 
+
 class ProgressWidget(forms.TextInput):
     def __init__(self, attrs=None):
         if not attrs:

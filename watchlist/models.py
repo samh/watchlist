@@ -5,7 +5,7 @@ WATCH_STATE_CHOICES = (
     ("N", "Not Started"),
     ("W", "Watching"),
     ("D", "Done"),
-    ("L", "Deferred"), # L for later
+    ("L", "Deferred"),  # L for later
     ("X", "Dropped"),
 )
 
@@ -36,7 +36,8 @@ class Show(models.Model):
     type = models.CharField(max_length=1, choices=TYPE_CHOICES, default='S')
     
     # Anime, animated, live-action
-    production_type = models.CharField(max_length=12, null=False,
+    production_type = models.CharField(
+        max_length=12, null=False,
         default=PRODUCTION_TYPES[0],
         choices=PRODUCTION_TYPE_CHOICES)
     
@@ -47,10 +48,8 @@ class Show(models.Model):
     
     # Maybe watch state could be inferred from progress?
     # In-progress, maybe, but not done.
-    # N or null?
-    #watch_state = models.CharField(max_length=1, default="N", choices=WATCH_STATE_CHOICES)
-    watch_state = models.CharField(max_length=1, blank=True,
-        choices=WATCH_STATE_CHOICES)
+    watch_state = models.CharField(
+        max_length=1, blank=True, choices=WATCH_STATE_CHOICES)
     
     #done = BooleanField(default=False)
     
@@ -69,11 +68,10 @@ class Show(models.Model):
     #        MaxValueValidator(max_value=10), MinValueValidator(min_value=1)])
     note = models.TextField(blank=True)
     
-    timestamp_created = models.DateTimeField("added", auto_now_add=True,
-        default=datetime.datetime.now())
-    timestamp_modified = models.DateTimeField("last modified", auto_now=True,
-        default=datetime.datetime.now())
-    
+    timestamp_created = models.DateTimeField(
+        "added", auto_now_add=True, default=datetime.datetime.now())
+    timestamp_modified = models.DateTimeField(
+        "last modified", auto_now=True, default=datetime.datetime.now())
     
     def __unicode__(self):
         return self.title
