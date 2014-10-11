@@ -23,6 +23,11 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -127,6 +132,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'watchlist',
     'south',
+    'rest_framework',
 )
 
 # A sample logging configuration. The only tangible logging
