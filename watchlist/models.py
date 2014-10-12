@@ -69,9 +69,9 @@ class Show(models.Model):
     note = models.TextField(blank=True)
     
     timestamp_created = models.DateTimeField(
-        "added", auto_now_add=True, default=datetime.datetime.now())
+        "added", auto_now_add=True, default=datetime.datetime.now)
     timestamp_modified = models.DateTimeField(
-        "last modified", auto_now=True, default=datetime.datetime.now())
+        "last modified", auto_now=True, default=datetime.datetime.now)
     
     def __unicode__(self):
         return self.title
