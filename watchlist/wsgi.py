@@ -11,4 +11,9 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "watchlist.settings")
 
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+
+# application = get_wsgi_application()
+
+# Serve static files directly
+from dj_static import Cling
+application = Cling(get_wsgi_application())

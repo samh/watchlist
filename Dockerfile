@@ -9,7 +9,6 @@ RUN virtualenv /venv
 ADD . /app
 RUN /venv/bin/pip install gunicorn -r /app/requirements.txt
 RUN /venv/bin/python /app/manage.py syncdb --noinput\
- && /venv/bin/python /app/manage.py migrate --noinput\
  && /venv/bin/python /app/manage.py collectstatic --noinput
 EXPOSE 8000
 #CMD ["/venv/bin/gunicorn_django", "/app/watchlist_dj"]
