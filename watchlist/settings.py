@@ -1,6 +1,8 @@
 # Django settings for watchlist_dj project.
 
 import os
+import dj_database_url
+
 PROJECT_DIR = os.path.dirname(__file__)
 BASE_DIR = os.path.abspath(os.path.join('..', os.path.dirname(__file__)))
 
@@ -14,14 +16,8 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'watchlist.sqlite',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
+    # Looks for 'DATABASE_URL' environment variable
+    'default': dj_database_url.config(default='sqlite:///watchlist.sqlite'),
 }
 
 REST_FRAMEWORK = {
