@@ -6,7 +6,7 @@ import dj_database_url
 PROJECT_DIR = os.path.dirname(__file__)
 BASE_DIR = os.path.abspath(os.path.join('..', os.path.dirname(__file__)))
 
-DEBUG = True
+DEBUG = bool(os.environ.get('DEBUG', False))
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -14,6 +14,8 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split()
 
 DATABASES = {
     # Looks for 'DATABASE_URL' environment variable
