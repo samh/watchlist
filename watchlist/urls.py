@@ -4,7 +4,7 @@ from watchlist import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from django.views.generic.base import RedirectView
+from django.views.generic import RedirectView, TemplateView
 
 admin.autodiscover()
 
@@ -22,9 +22,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', RedirectView.as_view(url='admin/watchlist/show/', permanent=True)),
+    # url(r'^$', RedirectView.as_view(url='admin/watchlist/show/', permanent=True)),
 
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/',
-        include('rest_framework.urls', namespace='rest_framework'))
+        include('rest_framework.urls', namespace='rest_framework')),
+
+    url(r'^.*$', TemplateView.as_view(template_name='app.html')),
 )

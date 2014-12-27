@@ -8,3 +8,4 @@ syntax: glob
 .idea/
 staticfiles
 .vagrant
+bower_components
