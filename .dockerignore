@@ -1,0 +1,6 @@
+.[^.]*
+*.cmd
+*.jar
+*.sqlite
+*.lnk
+Vagrant*
