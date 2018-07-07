@@ -1,7 +1,7 @@
-from django.forms import forms
+from django.forms import TextInput
 
 
-class ProgressWidget(forms.TextInput):
+class ProgressWidget(TextInput):
     def __init__(self, attrs=None):
         if not attrs:
             attrs = {}

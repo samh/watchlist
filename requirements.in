@@ -1,7 +1,0 @@
-Django<1.8
-djangorestframework<3
-dj-static
-dj-database-url
-
-# WSGI Server (initially I tried gunicorn, but it does not support Windows)
-waitress
