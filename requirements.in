@@ -1,0 +1,7 @@
+Django
+dj-database-url
+djangorestframework
+
+# WSGI Server (initially I tried gunicorn, but it does not support Windows)
+waitress
+whitenoise
